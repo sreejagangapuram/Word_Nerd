@@ -16,7 +16,7 @@
   
       ,"page0": {
           "title": "Play Word Nerd",
-          "content": "Word Nerd . Word Nerd . &lt;/html&gt; . How to Play How to Play . Guess the word in 6 tries. . Each guess must be a valid 6-letter word. . The color of the squares will change to show how close your guess was to the word. . Green - Letter is in the word and in the correct spot. . Yellow - Letter is in the word but in the wrong spot. . Grey - Letter is not in the word in any spot. . Close Settings Settings . Sound . Sound Language . Español English . Close q w e r t y u i o p Del a s d f g h j k l Enter z x c v b n m",
+          "content": "| Word Nerd | . Word Nerd . Word Nerd . &lt;/html&gt; . How to Play How to Play . Guess the word in 6 tries. . Each guess must be a valid 6-letter word. . The color of the squares will change to show how close your guess was to the word. . Green - Letter is in the word and in the correct spot. . Yellow - Letter is in the word but in the wrong spot. . Grey - Letter is not in the word in any spot. . Close Settings Settings . Sound . Sound Language . Español English . Close q w e r t y u i o p Del a s d f g h j k l Enter z x c v b n m",
           "url": "https://nighthawkcoders.github.io/Word_Nerd/wordnerd",
           "relUrl": "/wordnerd",
           "date": ""

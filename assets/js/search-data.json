@@ -1,22 +1,11 @@
 {
   
-    
-        "post0": {
-            "title": "Script2",
-            "content": "import { WORDS } from “./2022-11-02-word2.js”; . const NUMBER_OF_GUESSES = 6; let guessesRemaining = NUMBER_OF_GUESSES; let currentGuess = []; let nextLetter = 0; let rightGuessString = WORDS[Math.floor(Math.random() * WORDS.length)] console.log(rightGuessString) function initBoard() { let board = document.getElementById(“game-board”); . for (let i = 0; i &lt; NUMBER_OF_GUESSES; i++) { let row = document.createElement(&quot;div&quot;) row.className = &quot;letter-row&quot; for (let j = 0; j &lt; 6; j++) { let box = document.createElement(&quot;div&quot;) box.className = &quot;letter-box&quot; row.appendChild(box) } board.appendChild(row) } } . document.addEventListener(“keyup”, (e) =&gt; { . if (guessesRemaining === 0) { return } let pressedKey = String(e.key) if (pressedKey === &quot;Backspace&quot; &amp;&amp; nextLetter !== 0) { deleteLetter() return } if (pressedKey === &quot;Enter&quot;) { checkGuess() return } let found = pressedKey.match(/[a-z]/gi) if (!found || found.length &gt; 1) { return } else { insertLetter(pressedKey) } }) function insertLetter (pressedKey) { if (nextLetter === 6) { return } pressedKey = pressedKey.toLowerCase() let row = document.getElementsByClassName(&quot;letter-row&quot;)[6 - guessesRemaining] let box = row.children[nextLetter] box.textContent = pressedKey box.classList.add(&quot;filled-box&quot;) currentGuess.push(pressedKey) nextLetter += 1 } function deleteLetter () { let row = document.getElementsByClassName(&quot;letter-row&quot;)[6 - guessesRemaining] let box = row.children[nextLetter - 1] box.textContent = &quot;&quot; box.classList.remove(&quot;filled-box&quot;) currentGuess.pop() nextLetter -= 1 } function checkGuess () { let row = document.getElementsByClassName(&quot;letter-row&quot;)[6 - guessesRemaining] let guessString = &#39;&#39; let rightGuess = Array.from(rightGuessString) for (const val of currentGuess) { guessString += val } if (guessString.length != 6) { alert(&quot;Not enough letters!&quot;) return } if (!WORDS.includes(guessString)) { alert(&quot;Word not in list!&quot;) return } for (let i = 0; i &lt; 6; i++) { let letterColor = &#39;&#39; let box = row.children[i] let letter = currentGuess[i] let letterPosition = rightGuess.indexOf(currentGuess[i]) // is letter in the correct guess if (letterPosition === -1) { letterColor = &#39;grey&#39; } else { // now, letter is definitely in word // if letter index and right guess index are the same // letter is in the right position if (currentGuess[i] === rightGuess[i]) { // shade green letterColor = &#39;green&#39; } else { // shade box yellow letterColor = &#39;yellow&#39; } rightGuess[letterPosition] = &quot;#&quot; } let delay = 250 * i setTimeout(()=&gt; { //shade box box.style.backgroundColor = letterColor shadeKeyBoard(letter, letterColor) }, delay) } if (guessString === rightGuessString) { alert(&quot;You guessed right! Game over!&quot;) guessesRemaining = 0 return } else { guessesRemaining -= 1; currentGuess = []; nextLetter = 0; if (guessesRemaining === 0) { alert(&quot;You&#39;ve run out of guesses! Game over!&quot;) alert(`The right word was: &quot;${rightGuessString}&quot;`) } } } .",
-            "url": "https://nighthawkcoders.github.io/Word_Nerd/2022/11/02/script2.js",
-            "relUrl": "/2022/11/02/script2.js",
-            "date": " • Nov 2, 2022"
-        }
-        
-    
-  
 
   
   
-      ,"page0": {
+      "page0": {
           "title": "Play Word Nerd",
-          "content": "Word Nerd . Word Nerd . &lt;/html&gt; . How to Play How to Play . Guess the word in 6 tries. . Each guess must be a valid 5-letter word. . The color of the squares will change to show how close your guess was to the word. . Green - Letter is in the word and in the correct spot. . Yellow - Letter is in the word but in the wrong spot. . Grey - Letter is not in the word in any spot. . Close Settings Settings . Sound . Sound Language . Español English . Close q w e r t y u i o p Del a s d f g h j k l Enter z x c v b n m",
+          "content": "| Word Nerd | . Word Nerd . Word Nerd . &lt;/html&gt; . How to Play How to Play . Guess the word in 6 tries. . Each guess must be a valid 5-letter word. . The color of the squares will change to show how close your guess was to the word. . Green - Letter is in the word and in the correct spot. . Yellow - Letter is in the word but in the wrong spot. . Grey - Letter is not in the word in any spot. . Close Settings Settings . Sound . Sound Language . Español English . Close q w e r t y u i o p Del a s d f g h j k l Enter z x c v b n m",
           "url": "https://nighthawkcoders.github.io/Word_Nerd/wordnerd",
           "relUrl": "/wordnerd",
           "date": ""

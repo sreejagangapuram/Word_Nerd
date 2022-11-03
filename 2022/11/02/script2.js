@@ -1,4 +1,4 @@
-import { WORDS } from "./2022-11-02-word2.js";
+import { WORDS } from "./words.js";
 
 const NUMBER_OF_GUESSES = 6;
 let guessesRemaining = NUMBER_OF_GUESSES;
@@ -6,6 +6,7 @@ let currentGuess = [];
 let nextLetter = 0;
 let rightGuessString = WORDS[Math.floor(Math.random() * WORDS.length)]
 console.log(rightGuessString)
+
 function initBoard() {
     let board = document.getElementById("game-board");
 
@@ -13,7 +14,7 @@ function initBoard() {
         let row = document.createElement("div")
         row.className = "letter-row"
         
-        for (let j = 0; j < 6; j++) {
+        for (let j = 0; j < 5; j++) {
             let box = document.createElement("div")
             box.className = "letter-box"
             row.appendChild(box)
@@ -23,7 +24,8 @@ function initBoard() {
     }
 }
 
-  document.addEventListener("keyup", (e) => {
+initBoard()
+document.addEventListener("keyup", (e) => {
 
     if (guessesRemaining === 0) {
         return
@@ -47,8 +49,11 @@ function initBoard() {
         insertLetter(pressedKey)
     }
 })
+
+
+
 function insertLetter (pressedKey) {
-    if (nextLetter === 6) {
+    if (nextLetter === 5) {
         return
     }
     pressedKey = pressedKey.toLowerCase()
@@ -60,6 +65,8 @@ function insertLetter (pressedKey) {
     currentGuess.push(pressedKey)
     nextLetter += 1
 }
+
+
 function deleteLetter () {
     let row = document.getElementsByClassName("letter-row")[6 - guessesRemaining]
     let box = row.children[nextLetter - 1]
@@ -68,6 +75,9 @@ function deleteLetter () {
     currentGuess.pop()
     nextLetter -= 1
 }
+
+
+
 function checkGuess () {
     let row = document.getElementsByClassName("letter-row")[6 - guessesRemaining]
     let guessString = ''
@@ -77,7 +87,7 @@ function checkGuess () {
         guessString += val
     }
 
-    if (guessString.length != 6) {
+    if (guessString.length != 5) {
         alert("Not enough letters!")
         return
     }
@@ -88,7 +98,7 @@ function checkGuess () {
     }
 
     
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 5; i++) {
         let letterColor = ''
         let box = row.children[i]
         let letter = currentGuess[i]
@@ -135,3 +145,39 @@ function checkGuess () {
         }
     }
 }
+
+
+function shadeKeyBoard(letter, color) {
+    for (const elem of document.getElementsByClassName("keyboard-button")) {
+        if (elem.textContent === letter) {
+            let oldColor = elem.style.backgroundColor
+            if (oldColor === 'green') {
+                return
+            } 
+
+            if (oldColor === 'yellow' && color !== 'green') {
+                return
+            }
+
+            elem.style.backgroundColor = color
+            break
+        }
+    }
+}
+
+
+
+document.getElementById("keyboard-cont").addEventListener("click", (e) => {
+    const target = e.target
+    
+    if (!target.classList.contains("keyboard-button")) {
+        return
+    }
+    let key = target.textContent
+
+    if (key === "Del") {
+        key = "Backspace"
+    } 
+
+    document.dispatchEvent(new KeyboardEvent("keyup", {'key': key}))
+})

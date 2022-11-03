@@ -286,7 +286,7 @@ function closePopup2(){
 
 
 <script>
-    import { WORDS } from "./words.js";
+    import { WORDS } from "./word.js";
 
     const NUMBER_OF_GUESSES = 6;
     let guessesRemaining = NUMBER_OF_GUESSES;
@@ -294,10 +294,10 @@ function closePopup2(){
     let nextLetter = 0;
     let rightGuessString = WORDS[Math.floor(Math.random() * WORDS.length)]
     console.log(rightGuessString)
-
+    
     function initBoard() {
         let board = document.getElementById("game-board");
-
+    
         for (let i = 0; i < NUMBER_OF_GUESSES; i++) {
             let row = document.createElement("div")
             row.className = "letter-row"
@@ -307,29 +307,29 @@ function closePopup2(){
                 box.className = "letter-box"
                 row.appendChild(box)
             }
-
+    
             board.appendChild(row)
         }
     }
-
+    
     initBoard()
     document.addEventListener("keyup", (e) => {
-
+    
         if (guessesRemaining === 0) {
             return
         }
-
+    
         let pressedKey = String(e.key)
         if (pressedKey === "Backspace" && nextLetter !== 0) {
             deleteLetter()
             return
         }
-
+    
         if (pressedKey === "Enter") {
             checkGuess()
             return
         }
-
+    
         let found = pressedKey.match(/[a-z]/gi)
         if (!found || found.length > 1) {
             return
@@ -337,15 +337,15 @@ function closePopup2(){
             insertLetter(pressedKey)
         }
     })
-
-
-
+    
+    
+    
     function insertLetter (pressedKey) {
         if (nextLetter === 5) {
             return
         }
         pressedKey = pressedKey.toLowerCase()
-
+    
         let row = document.getElementsByClassName("letter-row")[6 - guessesRemaining]
         let box = row.children[nextLetter]
         box.textContent = pressedKey
@@ -353,8 +353,8 @@ function closePopup2(){
         currentGuess.push(pressedKey)
         nextLetter += 1
     }
-
-
+    
+    
     function deleteLetter () {
         let row = document.getElementsByClassName("letter-row")[6 - guessesRemaining]
         let box = row.children[nextLetter - 1]
@@ -363,28 +363,28 @@ function closePopup2(){
         currentGuess.pop()
         nextLetter -= 1
     }
-
-
-
+    
+    
+    
     function checkGuess () {
         let row = document.getElementsByClassName("letter-row")[6 - guessesRemaining]
         let guessString = ''
         let rightGuess = Array.from(rightGuessString)
-
+    
         for (const val of currentGuess) {
             guessString += val
         }
-
+    
         if (guessString.length != 5) {
             alert("Not enough letters!")
             return
         }
-
+    
         if (!WORDS.includes(guessString)) {
             alert("Word not in list!")
             return
         }
-
+    
         
         for (let i = 0; i < 5; i++) {
             let letterColor = ''
@@ -406,10 +406,10 @@ function closePopup2(){
                     // shade box yellow
                     letterColor = 'yellow'
                 }
-
+    
                 rightGuess[letterPosition] = "#"
             }
-
+    
             let delay = 250 * i
             setTimeout(()=> {
                 //shade box
@@ -417,7 +417,7 @@ function closePopup2(){
                 shadeKeyBoard(letter, letterColor)
             }, delay)
         }
-
+    
         if (guessString === rightGuessString) {
             alert("You guessed right! Game over!")
             guessesRemaining = 0
@@ -426,15 +426,15 @@ function closePopup2(){
             guessesRemaining -= 1;
             currentGuess = [];
             nextLetter = 0;
-
+    
             if (guessesRemaining === 0) {
                 alert("You've run out of guesses! Game over!")
                 alert(`The right word was: "${rightGuessString}"`)
             }
         }
     }
-
-
+    
+    
     function shadeKeyBoard(letter, color) {
         for (const elem of document.getElementsByClassName("keyboard-button")) {
             if (elem.textContent === letter) {
@@ -442,19 +442,19 @@ function closePopup2(){
                 if (oldColor === 'green') {
                     return
                 } 
-
+    
                 if (oldColor === 'yellow' && color !== 'green') {
                     return
                 }
-
+    
                 elem.style.backgroundColor = color
                 break
             }
         }
     }
-
-
-
+    
+    
+    
     document.getElementById("keyboard-cont").addEventListener("click", (e) => {
         const target = e.target
         
@@ -462,61 +462,11 @@ function closePopup2(){
             return
         }
         let key = target.textContent
-
+    
         if (key === "Del") {
             key = "Backspace"
         } 
-
+    
         document.dispatchEvent(new KeyboardEvent("keyup", {'key': key}))
-    })
-
-    export const WORDS = [
-        'Abuse',
-        'Adult',
-        'Agent',
-        'Anger',
-        'Apple', 
-        'Award', 
-        'Basis', 
-        'Beach', 
-        'Birth', 
-        'Block', 
-        'Blood', 
-        'Board', 
-        'Brain', 
-        'Bread', 
-        'Break', 
-        'Brown', 
-        'Buyer',
-        'Cause',
-        'Chain',
-        'Chair',
-        'Chest',
-        'Chief',
-        'Child',
-        'China',
-        'Claim',
-        'Class',
-        'Clock',
-        'Coach',
-        'Coast',
-        'Court',
-        'Cover',
-        'Cream',
-        'Crime',
-        'Cross',
-        'Crowd',
-        'Crown',
-        'Cycle',
-        'Dance',
-        'Death',
-        'Depth',
-        'Doubt',
-        'Draft',
-        'Drama',
-        'Dream',
-        'Dress',
-        'Drink',
-        'Drive'
-        ] 
+    })    
 </script>

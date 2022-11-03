@@ -37,16 +37,26 @@
 
   
       ,"page1": {
-          "title": "",
-          "content": "WordNerd . &lt;!DOCTYPE html&gt; . Word Nerd . Word Nerd . . How to Play How to Play . Guess the word in 6 tries. . Each guess must be a valid 6-letter word. . The color of the squares will change to show how close your guess was to the word. . Green - Letter is in the word and in the correct spot. . Yellow - Letter is in the word but in the wrong spot. . Grey - Letter is not in the word in any spot. . Close Settings Settings . Sound . Sound Language . Español English . Close q w e r t y u i o p Del a s d f g h j k l Enter z x c v b n m",
-          "url": "https://nighthawkcoders.github.io/Word_Nerd/",
-          "relUrl": "/",
+          "title": "Play Word Nerd",
+          "content": "Word Nerd . Word Nerd . &lt;/html&gt; . How to Play How to Play . Guess the word in 6 tries. . Each guess must be a valid 6-letter word. . The color of the squares will change to show how close your guess was to the word. . Green - Letter is in the word and in the correct spot. . Yellow - Letter is in the word but in the wrong spot. . Grey - Letter is not in the word in any spot. . Close Settings Settings . Sound . Sound Language . Español English . Close q w e r t y u i o p Del a s d f g h j k l Enter z x c v b n m",
+          "url": "https://nighthawkcoders.github.io/Word_Nerd/wordnerd",
+          "relUrl": "/wordnerd",
           "date": ""
       }
       
   
 
   
+      ,"page2": {
+          "title": "About",
+          "content": "Hi! We are Aliya, Ananya, Claire, and Sreeja from Mr.Yeung’s 5th period class. We made “Word Nerd”, a game similar to Wordle for our project. .",
+          "url": "https://nighthawkcoders.github.io/Word_Nerd/about",
+          "relUrl": "/about",
+          "date": ""
+      }
+      
+  
+
   
 
   
@@ -62,7 +72,10 @@
   
 
   
-      ,"page7": {
+  
+
+  
+      ,"page9": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://nighthawkcoders.github.io/Word_Nerd/robots.txt",

@@ -231,21 +231,21 @@ image: images/online-test.png
     </div>
 
 <script>
-let popup1 = document.getElementById("howto-popup")
-function openPopup1(){
-    popup1.classList.add("open-popup");
-}
-function closePopup1(){
-    popup1.classList.remove("open-popup");
-}
+    let popup1 = document.getElementById("howto-popup")
+    function openPopup1(){
+        popup1.classList.add("open-popup");
+    }
+    function closePopup1(){
+        popup1.classList.remove("open-popup");
+    }
 
-let popup2 = document.getElementById("settings-popup")
-function openPopup2(){
-    popup2.classList.add("open-popup")
-}
-function closePopup2(){
-    popup2.classList.remove("open-popup");
-}
+    let popup2 = document.getElementById("settings-popup")
+    function openPopup2(){
+        popup2.classList.add("open-popup")
+    }
+    function closePopup2(){
+        popup2.classList.remove("open-popup");
+    }
 </script>
     <div id="keyboard">
         <div class="row1">
@@ -283,9 +283,8 @@ function closePopup2(){
             <button class="keyboard-button">m</button>
         </div>
     </div>
-<style>
- {background-color: #f1f0e2;}
 
+<style>
     h1 {
       /* Title Design */
         text-align: center;
@@ -342,8 +341,8 @@ function closePopup2(){
     }
     
     .open-popup{
-      visibility: visible;
-      top: 50%
+        visibility: visible;
+        top: 50%
     }
     
     .howto-popup h2, .settings-popup h2{
@@ -362,28 +361,28 @@ function closePopup2(){
     }
     
     .howto-popup button:hover, .settings-popup button:hover{
-      background-color:#e2e2e2;
-      transition: 0.3s;
+        background-color:#e2e2e2;
+        transition: 0.3s;
     }
     
     /* Keyboard button display: */
-       #keyboard {
+    #keyboard {
         margin: 1rem 0;
         display: flex;
         flex-direction: column;
         align-items: center;
-      }
+    }
       
-      #keyboard div {
+    #keyboard div {
         display: flex;
-      }
+    }
       
-      .row2 {
+    .row2 {
         margin: 0.3rem 0;
-      }
+    }
     
     /* Keyboard button design: */
-      .keyboard-button {
+    .keyboard-button {
         font-size: 1.5rem;
         font-weight: 600;
         font-family: Courier, Times New Roman,Times, Serif;
@@ -396,7 +395,7 @@ function closePopup2(){
         color: #7c826b;
         background-color: #ebd1ae;
         border: 2px solid #a36c54;
-      }
+    }
     
     /* Mouse hover over button color change: */
     .howto-button:hover, .settings-button:hover, .keyboard-button:hover {

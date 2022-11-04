@@ -76,19 +76,15 @@ window.onload = wrap_img;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Word Nerd</title>
+    <script>
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+            <h1> Word Nerd</h1>
+        
 </head>
-
 <body>
-<script>
-src="https://code.jquery.com/jquery-3.6.0.min.js"
-integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <h1> Word Nerd</h1>
-    
-    <div id="game-board">
-
-    </div>
 <script>  
     const NUMBER_OF_GUESSES = 6;
     let guessesRemaining = NUMBER_OF_GUESSES;
@@ -374,7 +370,6 @@ function closePopup2(){
         justify-content: left;
     }
     
-    /* How To and Settings button design: */
     .howto-button, .settings-button{
         font-size: 1.5rem;
         font-weight: 600;

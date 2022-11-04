@@ -431,6 +431,7 @@ image: images/online-test.png
     }
     
     document.getElementsById('play').addEventListener('click', function(){
+        initBoard();
         insertLetter();
         deleteLetter();
         checkGuess()

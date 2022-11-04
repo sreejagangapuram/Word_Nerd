@@ -499,6 +499,7 @@ window.onload = wrap_img;
     }
     
     document.getElementsById('play').addEventListener('click', function(){
+        initBoard();
         insertLetter();
         deleteLetter();
         checkGuess()

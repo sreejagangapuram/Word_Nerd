@@ -27,6 +27,14 @@
   
 
   
+      ,"page3": {
+          "title": "Play Word Nerd",
+          "content": "| Word Nerd | . Word Nerd . Wordle Clone . q w e r t y u i o p a s d f g h j k l Del z x c v b n m Enter &lt;/html&gt; .",
+          "url": "https://nighthawkcoders.github.io/Word_Nerd/wordnerd",
+          "relUrl": "/wordnerd",
+          "date": ""
+      }
+      
   
 
   
@@ -42,7 +50,10 @@
   
 
   
-      ,"page8": {
+  
+
+  
+      ,"page9": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://nighthawkcoders.github.io/Word_Nerd/robots.txt",

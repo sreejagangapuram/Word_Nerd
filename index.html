@@ -187,8 +187,6 @@ image: images/online-test.png
         <button type="submit" class="howto-button" onclick="initBoard()">Play</button>
     </div>
 
-    <button id="play">Play</button>
-
     <div id="game-board">
 
     </div>
@@ -308,6 +306,8 @@ image: images/online-test.png
         }
     
         let found = pressedKey.match(/[a-z]/gi)
+        console.log(
+
         if (!found || found.length > 1) {
             return
         } else {
